@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Lab 3 | COMP1073 Client-Side JavaScript</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <h1>Countdown</h1>
+    <p></p>
+
+    <script>
+        var p = document.querySelector("p");
+        var countdownHeading = document.querySelector("h1");
+       
+        for (let i = 10; i >= 0; i--) {
+            setTimeout(function () {
+                console.log(i);
+
+                if (i === 0) {
+                    p.textContent = " Blastoff! 💣 (#_#) "; // Add a bomb emoji to signify blastoff
+                } else {
+                    p.textContent = i;
+                }
+
+                switch (i) {
+                    case 8:
+                        countdownHeading.style.backgroundColor = "yellow";
+                        break;
+                    case 4:
+                        countdownHeading.style.backgroundColor = "orange";
+                        break;
+                    case 0:
+                        countdownHeading.style.backgroundColor = "red";
+                        break;
+                }
+            }, 10000 - 1000 * i);
+        }
+    </script>
+</body>
+
+</html>
